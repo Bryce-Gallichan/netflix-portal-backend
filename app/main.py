@@ -13,8 +13,8 @@ app = FastAPI()
 
 origins = [
     "http://localhost:4200",
-    "https://netflix-portal-4f825.web.app/",
-    "https://netflix-portal-4f825.firebaseapp.com/"
+    "https://netflix-portal-4f825.web.app",
+    "https://netflix-portal-4f825.firebaseapp.com"
 ]
 
 app.add_middleware(
