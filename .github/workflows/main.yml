@@ -23,12 +23,14 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           export_default_credentials: true
           
-      - name: Create Firebase json
+      - name: Create json
         id: create-json
         uses: jsdaniell/create-json@1.1.2
         with:
           name: "firebase.json"
           json: ${{ secrets.FIREBASE_CREDENTIALS }}
+      - name: Commit json
+      - run: git config --global user.email "gallichan.bryce@gmail.com" && git config --global user.name "gallichan.bryce" && git add . && git add --force firebase.json && git status && git commit -a -m "Deploy Cloud Run Commit"
       # Build and push image to Google Container Registry
       - name: Build
         run: |
