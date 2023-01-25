@@ -6,9 +6,9 @@ on:
       - main
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  APP_ID:  ${{ secrets.APP_NAME }}
+  APP_ID:  ${{ secrets.GCP_APP_NAME }}
   RUN_REGION: us-central1
-  SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
+  SA_KEY_JSON: ${{ secrets.GCP_CREDENTIALS }}
 jobs:
   deploy:
     name: Deploy to Cloud Run
