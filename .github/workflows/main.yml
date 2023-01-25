@@ -32,7 +32,7 @@ jobs:
       # Build and push image to Google Container Registry
       - name: Build
         run: |
-          gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
+          gcloud config set project $PROJECT_ID
           gcloud builds submit --tag gcr.io/$PROJECT_ID/$APP_ID:$GITHUB_SHA --project=$PROJECT_ID
 
       - name: Deploy
