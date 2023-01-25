@@ -13,6 +13,6 @@ app.state.db = db
 app.include_router(users.router)
 app.include_router(shows.router, )
 
-@app.get("/", status_code=status.HTTP_200_OK)
+@app.get("", status_code=status.HTTP_200_OK)
 async def ping(request: Request):
     return f'Netflix Portal Backend | Deployed on {request.url}'

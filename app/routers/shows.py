@@ -9,7 +9,7 @@ router = APIRouter(
     responses={404: {'description': 'Not found'}}
 )
 
-@router.post("/", status_code=status.HTTP_200_OK)
+@router.post("", status_code=status.HTTP_200_OK)
 async def get_all_shows(query: Query, request: Request, user: dict = Depends(has_access)):
     db = request.app.state.db
 
