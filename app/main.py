@@ -3,7 +3,7 @@ from fastapi import FastAPI, status, Request
 from firebase_admin import credentials, firestore
 from .routers import users, shows
 
-cred = credentials.Certificate("firebase.json")
+cred = credentials.Certificate("firebase_credentials.json")
 admin = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
